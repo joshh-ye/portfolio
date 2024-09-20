@@ -1,2 +1,1 @@
-# portfolio
-personal website
+# https://joshh-ye.github.io/portfolio/
