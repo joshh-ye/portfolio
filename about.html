@@ -43,8 +43,104 @@
         </ul>
     </nav>
 
-    <div class="container my-5">
-        <p>I'm sophmore at Vandy</p>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col">
+                <h4 class="mb-3">All solutions (currently unorganized)</h4>
+                <div class="card">
+                    <div class="card-body">
+                        <h5>Resizing Partition Process</h5>
+                        <ul>
+                            <li>Start and end causing issue for increasing partition side in the middle</li>
+                            <li>New partition after sda3, copy sda3 data to sda4 (new) by mounting to new directories of disk and home and using cp command</li>
+                            <li>Delete sda3 partition using cfdisk and reboot computer (to detect deleted partition)</li>
+                            <li>Resize sda2 (root partition) into the now deleted sda3 space. Run <code>sudo resize2fs /dev/sda2</code> to refresh system understanding of partition size</li>
+                            <li>Match sda2 listed partition of <code>df -H</code> and <code>lsblk</code></li>
+                            <li>Mount sda4 and move files of /home/josh to /disk/home</li>
+                            <li>Refresh permissions using <code>chown -R josh:josh /home/josh</code></li>
+                            <li>Do this while mounted to <code>/mnt</code>, using <code>arch-chroot /mnt</code>, run in sudo command</li>
+                            <li>Unmount sda4 and delete using cfdisk</li>
+                            <li>Unmount sda2 disks and reboot</li>
+                        </ul>
+
+                        <h5>Lenovo Not Activating After Sleep</h5>
+                        <ol>
+                            <li>Open ‘Registry editor’</li>
+                            <li>Add the following to the directory <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power</code>:</li>
+                            <ul>
+                                <li>CsEnabled</li>
+                                <li>PlatformAoAcOverride</li>
+                            </ul>
+                            <li>Reboot</li>
+                        </ol>
+
+                        <h5>Installing Hyprland v4</h5>
+                        <ol>
+                            <li>Change <code>nwg-look-bin</code> to <code>nwg-look</code> in the set-hypr file OR install manually using <code>yay -S nwg-look</code></li>
+                            <li>When finished installing:</li>
+                            <ul>
+                                <li>Navigate to ‘master {’ in vim and replace class with the following:</li>
+                                <pre><code>
+master {
+    # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
+    new_status = true
+}
+                                </code></pre>
+                            </ul>
+                        </ol>
+
+                        <h5>Device: epic mouse V1</h5>
+                        <pre><code>
+device {
+    name = epic mouse V1
+    sensitivity = -0.5
+}
+                        </code></pre>
+
+                        <h5>Personal Recommendations</h5>
+                        <ul>
+                            <li>Recommend downloading Chrome over Chromium. Download from AUR using <code>yay -S google-chrome</code></li>
+                            <li>If Chrome is blurry, either:</li>
+                            <ul>
+                                <li>Go to <code>chrome:/flags</code> and set ozone platform to ‘auto’ or ‘Wayland’</li>
+                                <li>OR change display resolution in hyprland.conf</li>
+                            </ul>
+                        </ul>
+
+                        <h5>Additional Notes (Personal Preferences)</h5>
+                        <ul>
+                            <li>If modifying config file is not reflected in Hyprland (cd ./.&lt;insert path here&gt;). Often syntax issue. Try to refresh (). If cannot find issue, reinstall the config files. Download initial git repo in <code>home/&lt;user_name&gt;</code> and run <code>./set-hypr</code>.</li>
+                            <li>Make sure to edit the first hyprland.conf file, not the second.</li>
+                            <li>If mess anything up, delete recently created partitions of EFI and ROOT. Start from scratch. Order matters, names different from videos.</li>
+                            <li>Check for errors using <code>&lt;&gt;</code></li>
+                            <li>Mostly your fault, not hardware.</li>
+                            <li>Scaling on Chrome. Don’t modify .desktop file (not super easy/might mess Chrome up). Instead, change resolution through .config file. Uncomment the eDBI file and comment the display = auto file (line 3 or).</li>
+                        </ul>
+
+                        <h5>Opening Links in Vim</h5>
+                        <p>Enter <code>gx</code> (text cursor, not mouse)</p>
+
+                        <h5>Open .css File in JSONC</h5>
+                        <p>Vim <code>./.config/HyprV/waybar/conf/v4-config-bottom.jsonc</code></p>
+
+                        <h5>Super + Shift + C for Copy and Paste in Terminal</h5>
+                        <p>How to do in Vim?</p>
+
+                        <h5>Install Timeshift</h5>
+                        <pre><code>pacman -S timeshift
+sudo timeshift –create</code></pre>
+
+                        <h5>Correct Tutorial for SSH Keygen</h5>
+                        <p>The tutorial on GitHub is wrong. The correct one is:</p>
+                        <pre><code>ssh-keygen -t rsa -C</code></pre>
+
+                        <h5>Disable Bracketed Paste in Bash</h5>
+                        <pre><code>bind 'set enable-bracketed-paste off'
+source ~/.bashrc  # or ~/.zshrc</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 
