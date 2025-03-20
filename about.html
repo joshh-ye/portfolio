@@ -4,10 +4,12 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Joshua Ye's Portfolio - Software Engineer and Drone Enthusiast">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <title>portfolio</title>
   </head>
@@ -15,33 +17,38 @@
   
   <body style="overflow-y: scroll">
     <div class="container mt-5">
-        <h1>Joshua Ye</h1>
-
-        <p>
-            <a href="mailto: joshua.z.ye@vanderbilt.edu" type="button" class="btn btn-outline-primary">
-                joshua.z.ye@vanderbilt.edu
-            </a>
-        </p>
-
-        <p class="lead">
-            Enjoys eating dumplings
-        </p>
-    </div>
-
-
-    <nav class="container">
-        <ul class="nav nav-pills">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <h1>Joshua Ye</h1>
+                <p class="lead">
+                    Software Engineer | Drone Enthusiast | Linux Expert
+                </p>
+                <div class="mb-4">
+                    <a href="mailto:joshua.z.ye@vanderbilt.edu" class="btn btn-outline-primary me-2">
+                        <i class="fas fa-envelope me-2"></i>joshua.z.ye@vanderbilt.edu
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <ul class="nav nav-pills justify-content-center">
             <li class="nav-item">
-                <a href="index.html" class="nav-link active">Home</a>
+                <a href="index.html" class="nav-link active">
+                    <i class="fas fa-home me-2"></i>Home
+                </a>
             </li>
-            <li class ="nav-item">
-                <a href="about.html" class="nav-link">Solutions</a>
+            <li class="nav-item">
+                <a href="about.html" class="nav-link">
+                    <i class="fas fa-code me-2"></i>Solutions
+                </a>
             </li>
-            <li class ="nav-item">
-                <a href="Joshua Ye - resume (college).pdf" class="nav-link">Resume</a>
+            <li class="nav-item">
+                <a href="Joshua_s_resume__CS_.pdf" class="nav-link">
+                    <i class="fas fa-file-alt me-2"></i>Resume
+                </a>
             </li>
         </ul>
-    </nav>
+    </div>
 
     <div class="container mt-5">
         <div class="row">
@@ -73,28 +80,6 @@
                             </ul>
                             <li>Reboot</li>
                         </ol>
-
-                        <h5>Installing Hyprland v4</h5>
-                        <ol>
-                            <li>Change <code>nwg-look-bin</code> to <code>nwg-look</code> in the set-hypr file OR install manually using <code>yay -S nwg-look</code></li>
-                            <li>When finished installing:</li>
-                            <ul>
-                                <li>Navigate to ‘master {’ in vim and replace class with the following:</li>
-                                <pre><code>
-master {
-    # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
-    new_status = true
-}
-                                </code></pre>
-                            </ul>
-                        </ol>
-
-                        <h5>Device: epic mouse V1</h5>
-                        <pre><code>
-device {
-    name = epic mouse V1
-    sensitivity = -0.5
-}
                         </code></pre>
 
                         <h5>Personal Recommendations</h5>
@@ -116,27 +101,6 @@ device {
                             <li>Mostly your fault, not hardware.</li>
                             <li>Scaling on Chrome. Don’t modify .desktop file (not super easy/might mess Chrome up). Instead, change resolution through .config file. Uncomment the eDBI file and comment the display = auto file (line 3 or).</li>
                         </ul>
-
-                        <h5>Opening Links in Vim</h5>
-                        <p>Enter <code>gx</code> (text cursor, not mouse)</p>
-
-                        <h5>Open .css File in JSONC</h5>
-                        <p>Vim <code>./.config/HyprV/waybar/conf/v4-config-bottom.jsonc</code></p>
-
-                        <h5>Super + Shift + C for Copy and Paste in Terminal</h5>
-                        <p>How to do in Vim?</p>
-
-                        <h5>Install Timeshift</h5>
-                        <pre><code>pacman -S timeshift
-sudo timeshift –create</code></pre>
-
-                        <h5>Correct Tutorial for SSH Keygen</h5>
-                        <p>The tutorial on GitHub is wrong. The correct one is:</p>
-                        <pre><code>ssh-keygen -t rsa -C</code></pre>
-
-                        <h5>Disable Bracketed Paste in Bash</h5>
-                        <pre><code>bind 'set enable-bracketed-paste off'
-source ~/.bashrc  # or ~/.zshrc</code></pre>
                     </div>
                 </div>
             </div>
